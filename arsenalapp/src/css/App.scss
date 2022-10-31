@@ -1,0 +1,479 @@
+$minWidth: 320px;
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.app-container {
+  padding-top: 70px;
+  width: 100%;
+  background-color: #9e5c58;
+  // min-width: $minWidth;
+
+  display: flex;
+  justify-content: center;
+}
+
+.font-sans {
+  font-family: "PT Sans", sans-serif;
+}
+
+.font-garbled {
+  font-family: "PT Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.scrolled-nav {
+  position: fixed;
+  top: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: 500;
+  color: white;
+  background-color: black;
+
+  transition: height 0.1s ease-in;
+}
+
+.a-nav-element {
+  text-decoration: none;
+  color: none;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.page-navbar-md,
+.page-navbar {
+  position: fixed;
+  top: 0px;
+  height: 70px;
+  background-color: transparent;
+  color: white;
+
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0px auto 0px auto;
+}
+.page-navbar-md {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0%;
+    height: 0px;
+    width: 100%;
+    background-color: black;
+  }
+
+  & .page-navbar-holder-md {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 700;
+  }
+
+  & .navbar-logo {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    transition: width 1s ease-in;
+
+    & .logo-text {
+      font-size: 50px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.page-navbar {
+  & .page-navbar-holder {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 700;
+  }
+
+  & .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+
+    transition: margin-left 0.5s ease-in;
+
+    & .logo-text {
+      font-size: 50px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.navbar-menu {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.falling-nav {
+  // display: none;
+  top: 70px;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  background-color: black;
+  z-index: 800;
+
+  transition: height 0.5s ease-in;
+
+  & ul {
+    list-style: none;
+    margin: 0px auto 0px auto;
+    width: 90%;
+  }
+
+  & li {
+    cursor: pointer;
+    font-size: 40px;
+    background-color: black;
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.change .falling-nav {
+  height: 200px;
+}
+
+.bar-container {
+  display: inline-block;
+  cursor: pointer;
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+    border-radius: 10px;
+  }
+}
+
+.change {
+  & .bar1 {
+    transform: rotate(-45deg) translate(-7px, 6px);
+  }
+  & .bar2 {
+    opacity: 0;
+  }
+  & .bar3 {
+    transform: rotate(45deg) translate(-9px, -8px);
+  }
+}
+
+.unscrolled,
+.scrolled {
+  & .navbar-menu-md {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    li {
+      height: 100%;
+      font-size: 30px;
+      list-style: none;
+      margin-left: 40px;
+      padding: 10px;
+
+      transition: 0.2s;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.unscrolled {
+  li {
+    &:hover {
+      color: rgb(225, 240, 21);
+      // background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.scrolled {
+  li {
+    &:hover {
+      // color: yellow;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.header-page {
+  width: 90%;
+  height: 80vh;
+  // max-height: 100vh;
+  min-height: 60vh;
+
+  margin: 0px auto 0px auto;
+}
+
+.arsenal-stadium-bg {
+  background-image: url("../img/arsenalStadium.jpg");
+  background-position: center;
+  background-size: cover;
+
+  filter: grayscale(60%);
+  height: 70%;
+}
+
+#main-site {
+  // position: absolute;
+  width: 65%;
+  // height: 600px;
+  background-color: rgb(230, 230, 230);
+  margin: -300px auto 0px auto;
+  z-index: 800;
+  scroll-margin-top: 100px;
+}
+
+.main-site-header {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+}
+
+.article-card {
+  position: relative;
+  width: 100%;
+  padding: 10px 30px 30px 30px;
+  margin: 0px;
+
+  & .article-text-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .img-container {
+    padding: 0px;
+    width: 100%;
+
+    & .article-image {
+      max-width: 100%;
+      max-height: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  & .article-text-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(109, 9, 9);
+  }
+
+  & .article-text {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    text-align: center;
+  }
+}
+
+.scores-container {
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // flex-direction: row;
+  width: 60%;
+  margin: 50px auto 50px auto;
+  scroll-margin-top: 100px;
+  background-color: rgb(224, 224, 224);
+}
+
+.table-container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.premier-table {
+  // border-collapse: separate;
+  // border-spacing: 0 10px;
+  // margin-left: 40px;
+  // padding-right: 10px;
+
+  .headers {
+    background-color: rgb(243, 243, 243);
+  }
+
+  & .club-header,
+  .club-2-header,
+  .points-header,
+  .form-header {
+    padding: 0px 20px 0px 20px;
+  }
+
+  & .info-container {
+    border-bottom: 1px solid rgb(155, 154, 154);
+    height: 50px;
+    text-align: center;
+  }
+
+  & .highlight {
+    background-color: rgb(95, 214, 95);
+  }
+
+  & .info-table {
+    text-align: center;
+  }
+
+  & .club_name {
+    text-align: left;
+  }
+
+  & .info-table-image {
+    text-align: center;
+  }
+
+  & .form-container {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // margin: auto;
+    transform: translateY(12%);
+    flex-direction: row;
+    height: 100%;
+    list-style: none;
+
+    & .win,
+    & .lose,
+    & .draw {
+      width: 100%;
+      height: 40px;
+      border-radius: 50%;
+      width: 40px;
+      margin-left: 3px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+
+    & .win {
+      background-color: rgb(12, 175, 53);
+    }
+    & .lose {
+      background-color: rgba(231, 13, 13, 0.979);
+    }
+
+    & .draw {
+      // border: 2px solid white;
+      background-color: rgba(146, 146, 146, 0.836);
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .scores-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .scores-container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .article-card .article-text-header {
+    font-size: 25px;
+  }
+  .hideLarge {
+    display: none;
+  }
+  .scores-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .article-card .article-text-header {
+    font-size: 20px;
+  }
+  .hideMedium {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-card .article-text-header {
+    padding-bottom: 15px;
+  }
+  .article-text-container {
+    background-color: white;
+  }
+  .hideSmall {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .header-page {
+    width: 100%;
+  }
+  #main-site {
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  .scores-container {
+    width: 95%;
+  }
+}
+
+// @media (max-width: 768px) {
+//   .header-page {
+//     width: 100%;
+//   }
+// }
